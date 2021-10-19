@@ -1,0 +1,17 @@
+def howsumtab(lst , n):
+    table = [None] * (n+1)
+    table[0] = []
+
+    for i in range(n+1):
+        if(table[i] is not None):
+            for j in range(len(lst)):
+                a = i + lst[j]
+                if(a < n+1):
+                    table[a] = table[i] + [lst[j]]
+    return table
+
+
+lst = list(map(int , input().split()))
+n = int(input())
+a = howsumtab(lst,n)
+print(a)

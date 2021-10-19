@@ -1,0 +1,24 @@
+def howsum(lst , targetsum , dict = {}):
+    if(targetsum in dict):
+        return dict[targetsum]
+    if(targetsum == 0):
+        return []
+    if(targetsum < min(lst)):
+        return None
+    for i in lst:
+        rem = targetsum - i
+        remres = howsum(lst , rem , dict)
+        if(remres != None):
+            remres.append(i)
+            dict[targetsum] = remres
+            return dict[targetsum]
+
+    dict[targetsum] = None
+    return None
+
+
+
+targetsum = int(input())
+lst = list(map(int , input().split()))
+a = howsum(lst,targetsum)
+print(a)
