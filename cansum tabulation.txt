@@ -1,0 +1,17 @@
+def cansum(lst , n):
+    table = [False] * (n+1)
+    table[0] = True
+
+    for i in range(n+1):
+        if(table[i]):
+            for j in range(len(lst)):
+                a = i + lst[j]
+                if(a < n+1):
+                    table[a] = True
+    return table[-1]
+
+
+lst = list(map(int , input().split()))
+n = int(input())
+a = cansum(lst,n)
+print(a)
