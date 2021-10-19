@@ -1,0 +1,24 @@
+
+def canconstruct(t , lst , memo = {}):
+    if(t in memo):
+        return memo[t]
+    if(t == ''):
+        return True
+    for i in lst:
+        if(len(i) <= len(t)):
+            if(i == t[0:len(i)]):
+                k = t[len(i):]
+                if(canconstruct(k ,lst , memo) == True):
+                    memo[k] = True
+                    return True
+
+    memo[t] = False
+    return False
+
+
+
+
+t = input()
+lst = list(map(str , input().split()))
+a = canconstruct(t , lst)
+print(a)
