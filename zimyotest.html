@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        #redirectButton {
+            position: absolute;
+            top: 60%;
+            right: 2%;
+            opacity: 0;
+            background-color: #fff;
+            width: 500px;
+            padding: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://www.zimyo.work/"></iframe>
+
+    <!-- Button to redirect to google.com -->
+    <div id="redirectButton" onclick="redirectTosite()">
+        Redirecting to the awarness page.
+    </div>
+
+    <script>
+        function redirectTosite() {
+            window.location.href = "{{.URL}}";
+        }
+    </script>
+</body>
+</html>
+
